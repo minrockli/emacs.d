@@ -1,9 +1,10 @@
 (require-package 'unfill)
 
-(when (fboundp 'electric-pair-mode)
-  (electric-pair-mode))
-(when (eval-when-compile (version< "24.4" emacs-version))
-  (electric-indent-mode 1))
+;; Do not use electric-pair-mode
+;; (when (fboundp 'electric-pair-mode)
+;;   (electric-pair-mode))
+;; (when (eval-when-compile (version< "24.4" emacs-version))
+;;   (electric-indent-mode 1))
 
 (maybe-require-package 'list-unicode-display)
 
@@ -27,7 +28,9 @@
  set-mark-command-repeat-pop t
  tooltip-delay 1.5
  truncate-lines nil
- truncate-partial-width-windows nil)
+ truncate-partial-width-windows nil
+ backup-directory-alist `(".*" . "~/.emacs.d/backups/")
+ )
 
 (global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t
@@ -153,8 +156,6 @@
 ;;----------------------------------------------------------------------------
 ;; Handy key bindings
 ;;----------------------------------------------------------------------------
-(global-set-key (kbd "C-.") 'set-mark-command)
-(global-set-key (kbd "C-x C-.") 'pop-global-mark)
 
 ;; replace by keychord
 ;; (when (maybe-require-package 'avy)

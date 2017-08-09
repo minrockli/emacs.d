@@ -102,7 +102,7 @@
 (require 'init-rails)
 (require 'init-sql)
 
-(require 'init-paredit)
+;; (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-slime)
 (unless (version<= emacs-version "24.2")
@@ -146,8 +146,12 @@
 ;;----------------------------------------------------------------------------
 ;; Allow users to provide an optional "init-local" containing personal settings
 ;;----------------------------------------------------------------------------
+(require 'init-min)
+(require 'init-pinterest)
+(require 'init-tramp-mode)
+(require 'init-evil-mode)
+(require 'init-go-mode)
 (require 'init-local nil t)
-
 
 ;;----------------------------------------------------------------------------
 ;; Locales (setting them earlier in this file doesn't work in X)
